@@ -2,33 +2,42 @@
 
 function StringBuilder() {
 
-	var stringArray = [];
-	var stringComplete = "a";
-	
-    this.cat = function() {
-	for(var i = 0; i < arguments.length; i++){
-	
-	stringArray.push(arguments[i]);
-	}
-    return this;
+    var stringArray = [];
+    var stringComplete = "a";
+
+    this.cat = function () {
+        for (var i = 0; i < arguments.length; i++) {
+
+            stringArray.push(arguments[i]);
+        }
+        return this;
     }
-	
-	this.rep = function() {
-	for(var j = 0; j < arguments[arguments.length-1]; j++){
-	for(var i = 0; i < arguments.length-1; i++){
-	stringArray.push(arguments[i]);
-	}
-	}
-    return this;
+
+    this.rep = function () {
+        for (var j = 0; j < arguments[arguments.length - 1]; j++) {
+            for (var i = 0; i < arguments.length - 1; i++) {
+                stringArray.push(arguments[i]);
+            }
+        }
+        return this;
     }
-	
-	this.string = function() {
-	for(var i = 0; i<stringArray.length;i++){
-	stringComplete += stringArray[i];
-	}
-	return stringComplete;
-	}
-	
+
+    this.string = function () {
+        for (var i = 0; i < stringArray.length; i++) {
+            stringComplete += stringArray[i];
+        }
+        return stringComplete;
+    }
+
+    this.catIf = function () {
+
+        if (arguments[arguments.length - 1]) {
+            for (var i = 0; i < arguments.length - 1; i++) {
+                stringArray.push(arguments[i]);
+            }
+        }
+
+    }
 }
 
 </script>
