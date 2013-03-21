@@ -3,7 +3,7 @@
 function StringBuilder() {
 
     var stringArray = [];
-    var stringComplete = "a";
+    var stringComplete = "";
 
     this.cat = function () {
         for (var i = 0; i < arguments.length; i++) {
@@ -36,7 +36,7 @@ function StringBuilder() {
                 stringArray.push(arguments[i]);
             }
         }
-
+	return this;
     }
 }
 
